@@ -23,7 +23,6 @@ incremental==17.5.0
 Markdown==3.0.1
 msgpack==0.6.1
 Pillow==6.0.0
-pkg-resources==0.0.0
 PyHamcrest==1.9.0
 pytz==2019.1
 six==1.12.0
@@ -32,5 +31,5 @@ sqlparse==0.3.0
 Twisted==19.2.0
 txaio==18.8.1
 webencodings==0.5.1
-wiki==0.5.0
+wiki==0.4.4
 zope.interface==4.6.0

@@ -24,6 +24,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url('notifications/', include('django_nyt.urls')),
     url(r'^wiki/', include('wiki.urls')),
-    #url('', include('myapp.urls'))
+    url('', include('myapp.urls'))
 ]
 #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
