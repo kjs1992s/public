@@ -1,0 +1,33 @@
+#adapted from example in docker documentation
+version: '3'
+
+services:
+  web:
+    build: .
+    links:
+       - redis:redis
+    depends_on:
+       - redis
+    volumes:
+       - .:/code
+    expose:
+       - 8000
+    command: python /code/django-wiki/manage.py runserver 0.0.0.0:8000
+
+  redis:
+    image: redis
+    expose:
+       - 6379
+
+  nginx:
+    restart: always
+    build: ./nginx/
+    depends_on:
+      - web
+    ports:
+      - "80:80"
+    #  - "443:443"
+#     volumes:
+#        - ./mysite/myapp/static:/static
+    links:
+      - web:web
